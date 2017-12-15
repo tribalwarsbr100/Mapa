@@ -1,0 +1,44 @@
+var id = prompt('DIGITE SENHA = TW100', 'QUAL MELHOR CANAL SOBRE TRIBAL WARS DO YOUTUBE?')
+        , colors =
+        '00FF00 00FFFF FFFFFF FF8040 053800 FF0080 C0C0C0 FF0000 808080 FF00FF FFFF00 aa8fc6 392949 6200c4 035f60 b6d8d8 04634d 07f77f a2f707 f7e707 f79f07 f75b07 5a07f7 2d1f49 3d0202 7f2626 513535 1b2b00 69843b 144709 6a8c81 212938 0547c1 00828e 8e002f 8e6c77 859b34 aa951b c6b657 c68757 d6baa4';
+void(function ()
+{
+        colors = colors.split(' ');
+        var doc = (frames.main || self)
+                .document
+                , url = doc.URL
+                , w, l = ['http://www.br.twstats.com/' + url.match(/[a-z]+\d+/) +
+                        '/index.php?page=map&centrex=500&centrey=500&zoom=200&grid=1&nocache=1&fill=00000'];
+        if (!url.match(/(screen=(ranking|info_member)|mode=members)/)) alert('Para Funcionar Script, Va em Membros da Tribo.');
+        else
+        {
+                var rows = doc.getElementsByTagName('th')[0].offsetParent.rows
+                        , type = rows[1].getElementsByTagName('a')[0].href.match(/player|members/) ? 'player' : 'tribe'
+                        , dr, i, b = 0
+                        , a;
+                if (id) l.push('player_0_id=' + id + '&' + type + '_0_colour=' + colors[b++]);
+                dr = Math.min(colors.length, rows.length);
+                for (i = b; i < dr; i++)
+                {
+                        b = type + '_' + i + '_';
+                        l.push(b + rows[i].getElementsByTagName('a')[0].href.match(/id=\d+/));
+                        l.push(b + 'colour=' + colors[i]);
+                }
+                l = l.join('&');
+                w = open(l);
+                if (!w)
+                {
+                        a = doc.createElement('a');
+                        a.href = l;
+                        a.innerHTML = 'TW Stats [TW100]';
+                        a.target = '_blank';
+                        a.style.backgroundColor = '#f99';
+                        a.onclick = function ()
+                        {
+                                a.parentNode.removeChild(a)
+                        };
+                        b = rows[0].offsetParent;
+                        b.parentNode.insertBefore(a, b)
+                }
+        }
+})()
