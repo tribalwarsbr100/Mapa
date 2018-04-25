@@ -6,9 +6,9 @@
 // @email               tribalwarsbr100@gmail.com
 // @description         Modelo Coletor Coordenadas V1 Painel Interativo, Mult Funções; coletagem em lista numerica, codigo bb, em linha.
 // @version     	    0.0.1
-// @updateURL		    https://github.com/tribalwarsbr100/AutoFarms/blob/master/Javascript/Farm%20Revolution.js
-// @downloadURL         https://github.com/tribalwarsbr100/AutoFarms/raw/master/User.exec/Farm%20Revolution.user.js
-// @supportURL          https://github.com/tribalwarsbr100/AutoFarms/issues
+// @updateURL		    https://raw.githubusercontent.com/tribalwarsbr100/Mapa/master/Js/ColetormapaV1.js
+// @downloadURL         https://github.com/tribalwarsbr100/Mapa/raw/master/User.exec/ColetormapaV1.user.js
+// @supportURL          https://github.com/tribalwarsbr100/Mapa/issues
 // @grant               GM_addStyle
 // @grant               GM_getValue
 // @grant               GM_setValue
